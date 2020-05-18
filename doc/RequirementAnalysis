@@ -1,0 +1,17 @@
+文档背景：
+    Our firm has trading arrangement with a supplier to ship goods to us.
+     As part of trade agreement, the supplier agrees to ship X metric tons of goods in N number of shipments.
+     N can be one or more.
+    The supplier can alter the shipments allowing her to split or merge shipments.
+业务功能：
+1.init
+    Incoming N shipments X metric tons, initialization data
+2.Split
+    Provide a split interface to split x batches into n batches of goods,
+    The total weight of N batches = the weight of X batches.
+3.Merge
+    Provide merge interface,Merge operation on more than one shipment, would create one child shipment with summed up quantity.
+    Sum of all parent shipment quantities should be equal to child shipment quantity.
+4.Change root quantity
+    When the transaction quantity of the root Shipment changes,
+    update the quantity of all child Shipments in proportion to ensure that the transaction quantity of the root Shipment = the sum of the quantity of all leaf Shipments
